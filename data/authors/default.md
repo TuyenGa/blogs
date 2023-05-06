@@ -1,16 +1,11 @@
 ---
-name: Tails Azimuth
-avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
-twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
-github: https://github.com
+name: Vương Quang Tuyên
+avatar: /static/images/avatar.jpg
+
+occupation: Software developer
+company: GPAY
+email: tuyenvq.cntt@gmail.com
+text1: Hiện tại tôi là một lập trình viên fullstack golang, reactjs, nodejs ...
+text2: Sở thích của tôi là tìm hiểu về các kiến trúc, design pattern, những thứ mà tôi có thể áp dụng vào dự án. Ngoài ra tôi còn thích chạy, đọc sách, uống cafe và nghe nhạc. Một trong những thứ đặc biệt khác là tôi thích viết, nó làm cho suy nghĩ của tôi mạch lạc và chín chắn hơn.
+text3: Tháng 04/2023 vừa tròn 2 năm tôi vào Công ty cổ phần thanh toán G tại đây tôi làm từng bước một để xây dựng một hệ thống giúp khách hàng tiếp cận được với nền tảng trung gian thanh toán tiện lợi như thu hộ, chi hộ, các chức năng ví điện tử, tự tay xây dựng nên những tính năng đó giúp khoảng hơn 300k giao dịch mỗi ngày qua hệ thống.
 ---
-
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
-
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.

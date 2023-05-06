@@ -1,12 +1,12 @@
-import classNames from 'classnames'
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
-import ViewCounter from '@/components/ViewCounter'
-import NewsletterForm from '@/components/NewsletterForm'
+import { RoughNotation } from 'react-rough-notation'
+import Image from '@/components/Image'
+import ShortcutHome from '@/components/ShortcutHome'
 
 const MAX_DISPLAY = 3
 
@@ -21,76 +21,117 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
-          <h1 className="md:leading-14 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl">
-            Latest
-          </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
-          </p>
-        </div>
-        <NewestPost
-          posts={posts.filter((_, i) => {
-            return i < 3
-          })}
-        />
-      </div>
-    </>
-  )
-}
-
-function NewestPost({ posts }) {
-  return (
-    <div>
-      <h3 className="mb-6 text-2xl font-bold">New post</h3>
-      <div className="flex flex-col gap-5 md:flex-row">
-        {posts.map((post, i) => (
-          <Link
-            key={post.slug}
-            href={`/blog/${post.slug}`}
-            className={classNames(
-              'w-full transform rounded-xl bg-gradient-to-r p-1 transition-all duration-300 hover:scale-105 md:w-1/3 ',
-              {
-                'from-[#D8B4FE] to-[#818CF8]': i == 0,
-                'from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]': i == 1,
-                'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]': i == 2,
-              }
-            )}
-          >
-            <div className="bg-surface flex h-full flex-col justify-between rounded-lg p-4 ">
-              <div className="flex flex-col justify-between md:flex-row">
-                <h4 className="text-text mb-6 w-full text-lg font-medium sm:mb-10 md:text-lg ">
-                  {post.title}
-                </h4>
-              </div>
-              <div>
-                <div className="text-subtle">
-                  <ViewCounter slug={post.slug} />
-                </div>
-                <div>{formatDate(post.date)}</div>
-              </div>
+        <div className="pt-6 pb-8 space-y-2 md:space-y-5">
+          <div className="flex items-center justify-between">
+            <div className="">
+              <h1 className="mb-2 text-2xl font-extrabold tracking-tight leading-11 text-slate-900 dark:text-slate-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+                Tôi là{' '}
+                <span className="text-primary-color dark:text-primary-color-dark">Tuyên</span>,
+              </h1>
+              <h3 className="mb-2 text-xl font-extrabold tracking-tight leading-11 text-slate-900 dark:text-slate-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-16">
+                một lập trình viên tò mò và cố gắng trở nên tôt hơn mỗi ngày.
+              </h3>
             </div>
-          </Link>
-        ))}
+          </div>
+          <p className="text-lg leading-7 text-slate-600 dark:text-slate-300 mb-1">
+            Đây là nơi mà tôi dành để{' '}
+            <RoughNotation
+              type="underline"
+              show={true}
+              color="#fff176"
+              animationDelay={800}
+              animationDuration={1200}
+            >
+              viết,{' '}
+            </RoughNotation>
+            <RoughNotation
+              type="underline"
+              show={true}
+              color="#ADD8E6"
+              animationDelay={1400}
+              animationDuration={1200}
+            >
+              suy nghĩ,{' '}
+            </RoughNotation>
+            &{' '}
+            <RoughNotation
+              type="underline"
+              show={true}
+              color="#FF0000"
+              animationDelay={1700}
+              animationDuration={1200}
+            >
+              chia sẻ{' '}
+            </RoughNotation>
+            tất cả mọi thứ.
+          </p>
+          <h2 className="flex text-2xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl md:text-5xl">
+            Recent Posts
+          </h2>
+        </div>
+        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+          {!posts.length && 'No posts found.'}
+          {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
+            const { slug, date, title, summary, tags, thumbnail } = frontMatter
+            return (
+              <li key={slug} className="py-12">
+                <article>
+                  <div className="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
+                    <dl>
+                      <dt className="sr-only">Published on</dt>
+                      <dd className="text-2 font-small leading-6 text-slate-600 dark:text-slate-400">
+                        <time dateTime={date}>{formatDate(date)}</time>
+                      </dd>
+                    </dl>
+                    <div className="space-y-5 xl:col-span-3">
+                      <div className="space-y-6">
+                        <div>
+                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                            <Link
+                              href={`/blog/${slug}`}
+                              className="text-slate-800 dark:text-slate-200"
+                            >
+                              {title}
+                            </Link>
+                          </h2>
+                          <div className="flex flex-wrap">
+                            {tags.map((tag) => (
+                              <Tag key={tag} text={tag} />
+                            ))}
+                          </div>
+                        </div>
+                        <div className="prose text-slate-600 max-w-none dark:text-slate-400">
+                          {summary}
+                        </div>
+                      </div>
+                      <div className="text-base font-medium leading-6">
+                        <Link
+                          href={`/blog/${slug}`}
+                          className="text-primary-color hover:text-blue-600 dark:hover:text-yellow-300 dark:text-primary-color-dark"
+                          aria-label={`Read "${title}"`}
+                        >
+                          Đọc thêm &rarr;
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            )
+          })}
+        </ul>
       </div>
-      <Link
-        href="/blog"
-        className="hover:text-text text-subtle mt-5 flex items-center transition-all"
-      >
-        See all posts
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </Link>
-    </div>
+      {posts.length > MAX_DISPLAY && (
+        <div className="flex justify-end text-base font-medium leading-6">
+          <Link
+            href="/blog"
+            className="text-primary-color hover:text-blue-600 dark:hover:text-yellow-300 dark:text-primary-color-dark"
+            aria-label="all posts"
+          >
+            Tất cả &rarr;
+          </Link>
+        </div>
+      )}
+    </>
   )
 }

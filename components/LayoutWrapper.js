@@ -1,30 +1,33 @@
-import siteMetadata from '@/data/siteMetadata'
+import { useState, useRef, useEffect } from 'react'
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
 import Link from './Link'
 import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import NowPlaying from './NowPlaying'
+import Typewriter from 'typewriter-effect'
+import { useRouter } from 'next/router'
+import ReadingIndicator from './ReadingIndicator'
 
 const LayoutWrapper = ({ children }) => {
+  const router = useRouter()
+
   return (
     <SectionContainer>
-      <div className="flex h-screen flex-col justify-between">
-        <header className="flex items-center justify-between py-10">
+      <div className="flex flex-col justify-between h-screen">
+        <header className="flex items-center justify-between py-6">
           <div>
-            <Link href="/" aria-label={siteMetadata.headerTitle}>
-              <div className="flex items-center justify-between">
-                <div className="mr-3">
-                  <Logo />
-                </div>
-                {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="hidden h-6 text-2xl font-semibold sm:block">
-                    {siteMetadata.headerTitle}
-                  </div>
-                ) : (
-                  siteMetadata.headerTitle
-                )}
+            <Link href="/" aria-label="Einar Gudni's website">
+              <div className="flex items-center justify-between text-xl font-semibold text-primary-color dark:text-primary-color-dark">
+                {`~${router.asPath}`}{' '}
+                <Typewriter
+                  options={{
+                    strings: [],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
               </div>
             </Link>
           </div>
@@ -34,7 +37,7 @@ const LayoutWrapper = ({ children }) => {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+                  className="p-1 font-medium text-gray-900 sm:p-4 dark:text-gray-100 hover:dark:text-primary-color-dark hover:text-primary-color"
                 >
                   {link.title}
                 </Link>
@@ -44,7 +47,8 @@ const LayoutWrapper = ({ children }) => {
             <MobileNav />
           </div>
         </header>
-        <main className="mb-auto">{children}</main>
+        <main className="relative mb-auto">{children}</main>
+        <NowPlaying />
         <Footer />
       </div>
     </SectionContainer>
