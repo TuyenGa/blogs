@@ -12,9 +12,9 @@ const siteMetadata = {
   socialBanner: '/static/images/twittercard.png',
   email: 'tuyenvq.cntt@gmail.com',
   github: 'https://github.com/tuyenga',
-  // twitter: 'https://twitter.com/einargudni',
+  twitter: 'https://twitter.com',
   facebook: 'https://facebook.com',
-  instagram: 'https://instagram.com/einargudni',
+  instagram: 'https://instagram.com',
   // linkedin: 'https://www.linkedin.com/einargudni/',
   locale: 'vi-VN',
   analytics: {
