@@ -22,6 +22,8 @@ export default function AuthorLayout({ children, frontMatter }) {
     text4,
   } = frontMatter
 
+  console.log(avatar)
+
   return (
     <>
       <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
@@ -33,9 +35,10 @@ export default function AuthorLayout({ children, frontMatter }) {
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center pt-8 xl:sticky xl:top-0 space-x-2">
-            <Image
+            <img
               src={avatar}
               alt="avatar"
+              border="0"
               width="421px"
               height="525px"
               className="w-96 h-96 rounded"

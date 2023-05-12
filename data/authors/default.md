@@ -1,6 +1,6 @@
 ---
 name: Vương Quang Tuyên
-avatar: /static/images/avatar.jpg
+avatar: https://s6.imgcdn.dev/rHYOD.jpg
 
 occupation: Software developer
 company: GPAY
