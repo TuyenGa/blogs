@@ -63,7 +63,7 @@ export default function Home({ posts }) {
             >
               chia sẻ{' '}
             </RoughNotation>
-            tất cả mọi thứ.
+            mọi thứ.
           </p>
           <h2 className="flex text-2xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl md:text-5xl">
             Recent Posts

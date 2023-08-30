@@ -1,0 +1,176 @@
+---
+title: 'Làm sao để viết git commit message tốt hơn?'
+date: '2023-08-30'
+tags: ['work', 'git', 'best-practices', 'commit', 'message', 'convention']
+draft: false
+summary: 'Làm sao để viết git commit message tốt hơn? Có nhiều cách để viết commit message, tuy nhiên tôi thấy có một cách viết commit message rất hay và dễ hiểu. Đó là cách viết commit message theo chuẩn của AngularJS. Trong bài viết này tôi sẽ giới thiệu về chuẩn viết commit message này và cách sử dụng nó.'
+---
+
+## Giới thiệu
+Viết message cho commit trên git cũng quan trọng như việc bạn viết comment cho code vậy. Nó giúp cho người khác hiểu được bạn đã làm gì trong commit này. Nó cũng giúp cho bạn khi bạn quay lại xem lại commit này thì bạn cũng hiểu được mình đã làm gì. Nếu bạn làm việc nhóm thì việc viết commit message càng quan trọng hơn nữa. Vì khi bạn push code lên thì người khác sẽ xem lại commit message của bạn để hiểu bạn đã làm gì. Nếu commit message của bạn không rõ ràng thì người khác sẽ khó hiểu và có thể sẽ phải hỏi bạn. Điều này sẽ làm mất thời gian của bạn và người khác.
+
+Có nhiều cách để viết commit message, tuy nhiên tôi thấy có một cách viết commit message rất hay và dễ hiểu. Đó là cách viết commit message theo chuẩn của AngularJS. Trong bài viết này tôi sẽ giới thiệu về chuẩn viết commit message này và cách sử dụng nó.
+
+## Chuẩn viết commit message theo AngularJS
+
+Chuẩn viết commit message theo AngularJS được giới thiệu trong [AngularJS Git Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)
+
+### Goals
+
+* Cho phép tạo ra lịch sử commit message dễ đọc.
+
+* Cho phép tạo ra tự động changelog.
+
+* Cung cấp hướng dẫn viết commit message cho người mới tham gia dự án.
+
+### Format
+
+Một commit message bao gồm 3 phần: header, body và footer. Giữa các phần cách nhau bởi một dòng trống.
+
+```
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+```
+
+#### Header
+
+Header bao gồm type, scope và subject.
+
+##### Type
+
+Type có thể là một trong các giá trị sau:
+
+* **feat**: Thêm một chức năng mới cho người dùng, không phải là một fix.
+
+* **fix**: Sửa một lỗi cho người dùng, không phải là một chức năng mới.
+
+* **docs**: Thay đổi tài liệu.
+
+* **style**: Thay đổi không ảnh hưởng đến code (ví dụ: thay đổi khoảng trắng, định dạng, ...).
+
+* **refactor**: Thay đổi code không phải là fix và không phải là thêm chức năng.
+
+* **perf**: Thay đổi code để cải thiện hiệu năng.
+
+* **test**: Thay đổi code liên quan đến việc viết test.
+
+* **chore**: Thay đổi code không phải là thay đổi code ứng dụng hoặc test (ví dụ: cấu hình build, cấu hình CI, ...).
+
+##### Scope
+
+Scope bao gồm các phần của ứng dụng bị ảnh hưởng bởi commit này. Nó có thể là một phần của ứng dụng hoặc là một module của ứng dụng. Nếu commit ảnh hưởng đến nhiều phần của ứng dụng thì scope có thể là `*`. Nếu commit ảnh hưởng đến nhiều module thì scope có thể là `*`.
+
+##### Subject
+
+Subject là một câu mô tả ngắn gọn về commit. Nó không có dấu chấm ở cuối câu. Nó cũng không được viết hoa chữ cái đầu tiên.
+
+#### Body
+
+Body là một câu mô tả chi tiết về commit. Nó có thể bao gồm nhiều dòng. Mỗi dòng không quá 72 ký tự. Nó cũng có thể có các dòng trống.
+
+#### Footer
+
+Footer bao gồm các thông tin về các thay đổi không tạo ra code, ví dụ như các thay đổi về tài liệu, các thay đổi về cấu hình, ...
+
+### Ví dụ
+
+```
+feat(*): add new feature
+
+add feature A
+
+BREAKING CHANGE: add feature B
+
+Closes #123
+```
+
+
+```
+fix(*): fix bug
+
+fix bug A
+
+BREAKING CHANGE: fix bug B
+
+Closes #123
+```
+
+```
+docs(*): update README.md
+
+update README.md
+
+Closes #123
+```
+
+
+```
+style(*): fix whitespace
+
+fix whitespace
+
+Closes #123
+```
+
+
+```
+refactor(*): refactor code
+
+refactor code
+
+Closes #123
+```
+
+```
+perf(*): improve performance
+
+improve performance
+
+Closes #123
+
+```
+
+```
+test(*): add unit test
+
+add unit test
+
+Closes #123
+```
+
+```
+chore(*): add build script
+
+add build script
+
+Closes #123
+```
+
+```
+feat(*): add new feature
+
+add feature A
+
+BREAKING CHANGE: add feature B
+
+Closes #123
+```
+
+## Summary
+
+Trên đây là cách viết commit message theo chuẩn của AngularJS. Tôi thấy cách viết này rất hay và dễ hiểu. Nếu bạn chưa biết cách viết commit message thì bạn có thể tham khảo cách viết này. Nếu bạn đã biết cách viết commit message thì bạn có thể tham khảo cách viết này để cải thiện cách viết của mình.
+
+## Tham khảo
+
+* [AngularJS Git Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)
+
+* [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+
+* [A Note About Git Commit Messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+
+* [5 Useful Tips For A Better Commit Message](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message)
+
+
