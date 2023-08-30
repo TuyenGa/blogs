@@ -1,64 +1,7 @@
-# My personal website
+# Gác xép của Tuyên
 
-This is a [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) blog built on a template from Timothy Lin. [Repo](https://github.com/timlrx/tailwind-nextjs-starter-blog)
+**Gác xép của Tuyên** là một trang blog cá nhân nơi tôi trình bày những quan điểm, cảm xúc, kinh nghiệm và kiến thức liên quan đến cuộc sống, công việc, học tập và sở thích của tôi.
 
-## Features
+**Tôi là Tuyên**, một người có niềm đam mê với việc đọc sách, viết lách, du lịch và nhiếp ảnh, chạy bộ và đánh cờ vua. Tôi mong muốn qua trang blog này, tôi có thể thiết lập mối liên hệ với những người có cùng chung sở thích, giao lưu học hỏi và đóng góp những điều có ích cho cộng đồng. Trang blog của tôi không chỉ là một phần nhỏ trên mạng xã hội, mà còn là một không gian riêng biệt, một nơi để tôi ghi lại những kỷ niệm, những cảm nhận và những bài học quan trọng trong cuộc sống.
 
-- Easy styling customization with [Tailwind 3.0](https://tailwindcss.com/blog/tailwindcss-v3) and primary color attribute
-- Near perfect lighthouse score - [Lighthouse report](https://www.webpagetest.org/result/210111_DiC1_08f3670c3430bf4a9b76fc3b927716c5/)
-- Mobile-friendly view
-- Light and dark theme
-- [MDX - write JSX in markdown documents!](https://mdxjs.com/)
-- Server-side syntax highlighting with line numbers and line highlighting via [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus)
-- Support for tags - each unique tag will be its own page
-- Support for multiple authors
-- Spotify now-playing component
-- Command pallette
-- Support for nested routing of blog posts
-- SEO friendly with RSS feed, sitemaps and more!
-
-## Sample posts
-
-## Quick Start Guide
-
-1. JS (official support)
-
-```bash
-npx degit https://github.com/einargudnig/einargudni.com.git
-```
-
-2. Personalize `siteMetadata.js` (site related information)
-3. Personalize `authors/default.md` (main author)
-4. Modify `projectsData.js`
-5. Modify `headerNavLinks.js` to customize navigation links
-6. Add blog posts
-7. Deploy on Vercel
-
-## Development
-
-First, run the development server:
-
-```bash
-npm start
-```
-
-    or
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-### Compose
-
-Run `node ./scripts/compose.js` to bootstrap a new post.
-
-Follow the interactive prompt to generate a post with pre-filled front matter.
-
-## Deploy
-
-**Vercel**  
-The easiest way to deploy the template is to use the [Vercel Platform](https://vercel.com) from the creators of Next.js. Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Tôi hy vọng các bạn sẽ cảm thấy hứng thú khi đọc trang blog của tôi và cùng tôi chia sẻ những điều tốt đẹp nhất. Xin cảm ơn các bạn đã ghé thăm **Gác xép của Tuyên!**

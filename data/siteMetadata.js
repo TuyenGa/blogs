@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: 'Chào!👋',
+  title: 'Hi!👋',
   author: 'Tuyên',
   headerTitle: 'My website',
   description: 'My online place for thoughts',
@@ -67,7 +67,7 @@ const siteMetadata = {
     },
     disqusConfig: {
       // https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-      shortname: process.env.NEXT_PUBLIC_DISQUS_SHORTNAME,
+      shortname: 'https-blogs-tuyenvq-com',
     },
   },
 }

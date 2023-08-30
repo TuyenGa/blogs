@@ -74,7 +74,7 @@ export default function AuthorLayout({ children, frontMatter }) {
             </p>
             <br />
             <p>
-              Nếu có bất kì điều gì thắc mắc vui lòng liên hệ với tôi qua email:{' '}
+              Nếu có bất kì điều gì thắc mắc hoặc góp ý vui lòng liên hệ với tôi qua email:{' '}
               <RoughNotation type="highlight" show={true} color="#FBCFE8" animationDelay={1200}>
                 <span className="dark:text-gray-700">tuyenvq.cntt@gmail.com</span>
               </RoughNotation>

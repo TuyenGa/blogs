@@ -65,8 +65,8 @@ export default function Home({ posts }) {
             </RoughNotation>
             mọi thứ.
           </p>
-          <h2 className="flex text-2xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl md:text-5xl">
-            Recent Posts
+          <h2 className="flex text-2xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl md:text-5xl mt-5xl">
+            Bài viết mới nhất
           </h2>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
