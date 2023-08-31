@@ -1,6 +1,6 @@
 ---
 name: Vương Quang Tuyên
-avatar: /static/images/avatar.jpg
+avatar: /static/images/avatar.jpeg
 
 occupation: Kỹ sư phần mềm
 company: Công ty nhỏ ở Hà Nội
